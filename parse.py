@@ -85,15 +85,7 @@ for x in char_freq:
 	chars.append(tmp)
 
 chars.sort(key=operator.attrgetter('freq'), reverse=True)
-	
-exceptions = 0
-for x in chars:
-	try:
-		print(str(x.freq) + " " + x.char + " " +  dict[x.char])
-	except UnicodeEncodeError:
-		exceptions+= 1
-		
-print ("Total of " + str(exceptions) + " exceptions")
+
 	
 with open('stats.csv', 'w', newline='') as csvfile:
 	stats_csv = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_NONE)
@@ -105,8 +97,10 @@ with open('stats.csv', 'w', newline='') as csvfile:
 		pronunciation_no_newline = pronunciation_no_newline.replace(',',' ')
 		pronunciation_no_newline = pronunciation_no_newline.replace('[','')	
 		pronunciation_no_newline, definition = pronunciation_no_newline.split(']', 1)
-
-		stats_csv.writerow([x.char, x.freq, pronunciation_no_newline, definition])
+		try:
+			stats_csv.writerow([x.char, x.freq, pronunciation_no_newline, definition])
+		except UnicodeEncodeError:
+			continue;
 f.close()
 
 	
