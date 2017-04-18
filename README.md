@@ -7,12 +7,21 @@ if you are reading a book, you can run the program on 1 chapter at a time, and l
 vocabulary for that chapter. After that, you can read the chapter without having
 to stop every time you encounter a new word.
 
+This program can analyze texts with 100000s of characters in under a second.
+
+This script uses the CC-CEDICT dictionary to lookup words.
+
 Requirements:
 	Python 3
 	
 Setup:
+
 	1. Put all the files in a folder somewhere
+	
 	2. Put the text you want to analyze in the file called article.txt
+	
 	3. Run parse.py
+	
 	4. Open stats.csv in whatever program you want (excel, notepad++, etc...)
+	
 	
