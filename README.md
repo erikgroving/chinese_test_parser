@@ -1,5 +1,5 @@
 This repository is a program that I wrote to parse Chinese texts and extract
-word appearances. It is helpfull for when I am reading a Chinese text that may
+word appearances. It is helpful for when I am reading a Chinese text that may
 have words I am unfamiliar with. 
 The output is a csv file that lists the word, frequency,
 pronunciation, and the meaning. For example,
